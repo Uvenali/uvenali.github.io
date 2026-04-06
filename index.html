@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://telegram.org"></script>
+</head>
+<body>
+    <h1>Привет, <span id="username">пользователь</span>!</h1>
+    <script>
+        const tg = window.Telegram.WebApp;
+        tg.expand(); // Развернуть на всё окно
+        document.getElementById('username').innerText = tg.initDataUnsafe.user?.first_name || "аноним";
+    </script>
+</body>
+</html>
